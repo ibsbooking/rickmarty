@@ -1,0 +1,2 @@
+
+enum FavoriteStatus {success, empty}

@@ -1,0 +1,2 @@
+
+enum ScreensPaginationStatus {lists, favorites}
