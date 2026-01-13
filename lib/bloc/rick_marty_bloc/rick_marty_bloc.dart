@@ -18,14 +18,14 @@ class RickMartyBloc extends Bloc<RickMartyEvent, RickMartyState> {
   List<Character> characterList = [];
 
   void _refreshData(RickMartRefreshFetched event, Emitter<RickMartyState> emitter) async {
-    characterList.clear();
-    cachedApp.characterList.clear();
     try {
       var response = await http.get(
         Uri.parse(rickMartyUrl),
       );
       Map jsonResponse = jsonDecode(utf8.decode(response.bodyBytes));
       final data = jsonResponse['results'];
+      characterList.clear();
+      await cachedApp.deleteCharacterFromHive();
       for (var item in data) {
         Character character = Character.fromJson(item);
         characterList.add(character);
