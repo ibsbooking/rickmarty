@@ -15,11 +15,9 @@ class CachedApp {
 
   Future<void> addThemeText(bool isTheme) async => await init.stringStore.put(themeText, isTheme);
 
-  Future<void> addCharacterToHive(List<Character> characterList) async => await init.characterStore.addAll(characterList);
+  Future<void> addCharacterWithKey(int key, Character character) async => init.characterStore.put(key, character);
 
   Future<void> addCharacterFavorite(Favorite favorite) async => await init.characterFavorite.add(favorite);
-
-  Future<void> deleteCharacterFromHive() async => await init.characterStore.clear();
 
   Future<void> deleteFavoriteFromHive(int id) async => await init.characterFavorite.delete(id);
 }

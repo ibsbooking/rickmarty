@@ -8,13 +8,6 @@ class RickMartyEvent extends Equatable{
   List<Object?> get props => [];
 }
 
-class RickMartRefreshFetched extends RickMartyEvent {
-
-  final BuildContext context;
-
-  RickMartRefreshFetched(this.context);
-}
-
 class RickMartyFetched extends RickMartyEvent {
 
   final BuildContext context;

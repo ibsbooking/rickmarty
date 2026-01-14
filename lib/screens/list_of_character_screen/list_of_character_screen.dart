@@ -23,11 +23,11 @@ class ListOfCharacterScreen extends StatefulWidget {
 class _ListOfCharacterScreenState extends State<ListOfCharacterScreen> {
 
   Future refreshData() async {
-    context.read<RickMartyBloc>().add(RickMartRefreshFetched(context));
+    context.read<RickMartyBloc>().add(RickMartyFetched(context));
   }
 
   @override
-  Widget build(BuildContetext) {
+  Widget build(BuildContext context) {
     CachedApp cachedApp = CachedApp();
     Initialization init = Initialization();
     return BlocBuilder<RickMartyBloc, RickMartyState>(
